@@ -8,6 +8,7 @@
   --color-3: rgb(204, 204, 204);
   --color-4: rgb(115, 132, 184);
   --color-5: orange;
+  --color-6: rgb(64, 64, 65);
 }
 * {
   box-sizing: border-box;
@@ -47,7 +48,7 @@ button {
 }
 
 button:hover {
-  background-color: rgba(255, 255, 255, 0.247);
+  background-color: var(--color-6);
   color: var(--color-2);
 }
 

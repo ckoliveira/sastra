@@ -10,10 +10,7 @@ export function loadPosts() {
 }
 export function showPost(postID) {
   const post = getPost(postID);
-  const postViewer = document.querySelector(".middle-panel");
-  if (!postViewer) {
-    throw new Error("middle panel div was not set");
-  }
+  const postViewer = getHTMLElement(".post-viewer");
   postViewer.innerHTML = PostHTML(post);
 }
 export function insertMockPosts() {
