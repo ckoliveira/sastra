@@ -1,0 +1,49 @@
+.post-card p {
+  width: 100%;
+}
+
+.post-card {
+  width: 100%;
+  height: auto;
+  cursor: pointer;
+  padding: 0.2em;
+}
+
+.post-card,
+.post-card-title,
+.post-card-tags {
+  user-select: none;
+  word-break: normal;
+  overflow-wrap: break-word;
+}
+
+.post-card-title {
+  margin-bottom: 0.5em;
+  font-weight: bold;
+}
+
+.post-card:hover {
+  background-color: var(--color-2);
+  padding: 0.2em;
+}
+
+.post-card:hover p,
+.post-card:hover h3 {
+  color: var(--color-1);
+}
+
+.post {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.post-body {
+  white-space: pre-wrap;
+  border-bottom: 1px solid var(--color-3);
+  padding-bottom: 0.7em;
+}
+
+.post-tags {
+  margin-bottom: 1em;
+}

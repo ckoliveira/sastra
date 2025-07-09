@@ -1,5 +1,96 @@
-.warning {
-  position: fixed;
-  right: 20px;
-  bottom: 20px;
+#root {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.header {
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: larger;
+}
+.main-panel {
+  width: 70vw;
+  height: 100vh;
+  display: flex;
+  gap: 5px;
+}
+
+.left-panel,
+.middle-panel,
+.right-panel {
+  height: 100%;
+  width: 100%;
+  background-color: var(--color-1);
+  padding: 0.5em;
+}
+
+.right-panel {
+  display: flex;
+  flex-direction: column;
+  width: 30vw;
+}
+
+.right-panel-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.used-tags-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.used-tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  height: 100%;
+  overflow-y: auto;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+}
+
+.right-panel button {
+  text-align: left;
+}
+
+.left-panel {
+  width: 40vw;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.post-card-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  overflow-y: auto;
+  height: 100%;
+}
+
+
+.middle-panel {
+  width: 70vw;
+  padding-left: 1em;
+  padding-right: 1em;
+  border-left: 1px solid var(--color-3);
+  border-right: 1px solid var(--color-3);
+}
+
+#search-input {
+  margin-bottom: 2em;
+}
+
+#search-input:hover {
+  border-radius: 10px;
+  border: 2px solid var(--color-3);
 }

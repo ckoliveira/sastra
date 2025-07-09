@@ -17,9 +17,12 @@ export function getPost(postID) {
   }
   return posts[postID];
 }
-export function insertPost(post) {
+function postExists(postID) {
+  return Object.keys(getPosts()).includes(postID);
+}
+export function upsertPost(post) {
   const posts = getPosts();
   posts[post.id] = post;
   localStorage.setItem("posts", JSON.stringify(posts));
-  return post;
+  return getPost(post.id);
 }

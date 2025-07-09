@@ -27,7 +27,7 @@ export function getPost(postID: string): Post {
 }
 
 function postExists(postID: string): boolean {
-    return Object.keys(getPosts()).includes(postID)
+  return Object.keys(getPosts()).includes(postID);
 }
 
 export function upsertPost(post: Post): Post {
@@ -36,6 +36,6 @@ export function upsertPost(post: Post): Post {
   posts[post.id] = post;
 
   localStorage.setItem("posts", JSON.stringify(posts));
-  
+
   return getPost(post.id);
 }
