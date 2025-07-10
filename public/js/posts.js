@@ -1,8 +1,7 @@
 import { PostCard } from "./components/post-card.js";
 import { PostHTML } from "./components/post.js";
 import { getHTMLElement } from "./html.js";
-import { MOCK_DATASET } from "./ochtaurae_dataset.js";
-import { getPost, getPosts, upsertPost } from "./storage.js";
+import { getPost, getPosts } from "./storage.js";
 export function loadPosts() {
   const postCards = getHTMLElement(".post-card-list");
   const posts = Object.values(getPosts());
@@ -12,10 +11,6 @@ export function showPost(postID) {
   const post = getPost(postID);
   const postViewer = getHTMLElement(".post-viewer");
   postViewer.innerHTML = PostHTML(post);
-}
-export function insertMockPosts() {
-  const mockPosts = MOCK_DATASET;
-  mockPosts.forEach((mockPost) => upsertPost(mockPost));
 }
 export function getUsedTags() {
   let tags = [];

@@ -26,7 +26,6 @@
 .right-panel {
   height: 100%;
   width: 100%;
-  background-color: var(--color-1);
   padding: 0.5em;
 }
 
@@ -94,6 +93,7 @@
   width: 100%;
   height: 100%;
   opacity: 5%;
+  pointer-events: none;
 }
 
 #search-input {
