@@ -5,7 +5,10 @@ import { getPost, getPosts } from "./storage.js";
 export function loadPosts() {
   const postCards = getHTMLElement(".post-card-list");
   const posts = Object.values(getPosts());
-  posts.map((p) => PostCard(p)).forEach((p) => postCards.appendChild(p));
+  posts
+    .sort((a, b) => b.createdAt - a.createdAt)
+    .map((p) => PostCard(p))
+    .forEach((p) => postCards.appendChild(p));
 }
 export function showPost(postID) {
   const post = getPost(postID);
