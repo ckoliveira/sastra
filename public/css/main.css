@@ -1,6 +1,7 @@
 @import url("/css/index.css");
 @import url("/css/home.css");
 @import url("/css/posts.css");
+@import url("/css/post-menu.css");
 
 :root {
   --color-1: rgb(15, 17, 23);
@@ -57,7 +58,8 @@ button:active {
   color: var(--color-1);
 }
 
-input {
+input,
+textarea {
   background-color: var(--color-1);
   border: 2px solid transparent;
   border-bottom: 2px solid var(--color-3);
@@ -67,8 +69,8 @@ input {
   padding: 0.5em;
 }
 
-input::placeholder {
+input::placeholder,
+textarea::placeholder {
   margin-left: 0.5em;
   outline: none;
-  font-weight: bold;
 }

@@ -34,6 +34,11 @@
   display: flex;
   flex-direction: column;
   width: 30vw;
+  gap: 10px;
+}
+
+.right-panel button {
+  text-align: left;
 }
 
 .right-panel-menu {
@@ -46,6 +51,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 2em;
 }
 .used-tags {
   display: flex;
@@ -55,10 +61,6 @@
   overflow-y: auto;
   padding-left: 0.5em;
   padding-right: 0.5em;
-}
-
-.right-panel button {
-  text-align: left;
 }
 
 .left-panel {
@@ -80,8 +82,6 @@
 .middle-panel {
   position: relative;
   width: 70vw;
-  padding-left: 1em;
-  padding-right: 1em;
 }
 
 .sastra-background-logo {
