@@ -37,11 +37,15 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
+  margin-top: 2.8em;
 }
 
 .post-actions {
   display: flex;
   justify-content: space-between;
+  border-top: 10px solid var(--color-2);
+  border-radius: 10px;
+
 }
 
 .post-title {
@@ -50,7 +54,7 @@
 
 .post-body {
   white-space: pre-wrap;
-  border-bottom: 1px solid var(--color-3);
+  border-bottom: 1px solid var(--color-6);
   padding-bottom: 0.7em;
 }
 

@@ -1,6 +1,5 @@
 export const PostHTML = (post) => `
   <article class="post">
-    <h1 class="post-title"> ${post.title}</h1>
     <section class="post-actions">
       <div>
         <button> edit </button>
@@ -8,6 +7,7 @@ export const PostHTML = (post) => `
       </div>
       <button> close </button>
     </section>
+    <h1 class="post-title"> ${post.title}</h1>
     <p class="post-body">${post.body}</p>
     
     <p class="post-tags">
