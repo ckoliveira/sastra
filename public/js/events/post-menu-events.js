@@ -28,6 +28,7 @@ document.addEventListener("post-save-requested", (e) => {
     updatedAt: Date.now(),
   });
   dispatchEvent("post-menu-closing-requested", {});
+  dispatchEvent("post-card-list-reloading-requested", {});
 });
 document.addEventListener("post-menu-closing-requested", (e) => {
   removeHTMLElement("#" + POST_MENU_DIV);
