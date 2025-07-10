@@ -39,6 +39,15 @@
   gap: 10px;
 }
 
+.post-actions {
+  display: flex;
+  justify-content: space-between;
+}
+
+.post-title {
+  text-align: center;
+}
+
 .post-body {
   white-space: pre-wrap;
   border-bottom: 1px solid var(--color-3);
