@@ -1,5 +1,6 @@
+import { dispatchEvent } from "./events/events.js";
 import { getHTMLElement } from "./html.js";
 const newEntryButton = getHTMLElement("#new-entry-button");
 newEntryButton.onclick = function () {
-  document.dispatchEvent(new CustomEvent("post-menu-requested"));
+  dispatchEvent("post-menu-requested", {});
 };

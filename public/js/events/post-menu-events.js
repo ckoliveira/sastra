@@ -10,6 +10,7 @@ import {
   setSavePostButtonEvent,
 } from "../post-menu.js";
 import { upsertPost } from "../storage.js";
+import { dispatchEvent } from "./events.js";
 document.addEventListener("post-menu-requested", (e) => {
   if (!doesElementExist("#" + POST_MENU_DIV)) {
     const middlePanelDIV = getHTMLElement(".middle-panel");
@@ -26,7 +27,7 @@ document.addEventListener("post-save-requested", (e) => {
     createdAt: Date.now(),
     updatedAt: Date.now(),
   });
-  document.dispatchEvent(new CustomEvent("post-menu-closing-requested"));
+  dispatchEvent("post-menu-closing-requested", {});
 });
 document.addEventListener("post-menu-closing-requested", (e) => {
   removeHTMLElement("#" + POST_MENU_DIV);
