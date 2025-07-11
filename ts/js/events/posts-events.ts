@@ -9,4 +9,4 @@ document.addEventListener("post-clicked", (e) => {
 
 document.addEventListener("post-card-list-reloading-requested", (e) => {
   loadPosts();
-})
+});

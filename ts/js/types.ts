@@ -14,4 +14,4 @@ export type PostMenuInput = {
   title: string;
   body: string;
   tags: string[];
-}
+};

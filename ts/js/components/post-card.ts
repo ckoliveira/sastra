@@ -3,7 +3,7 @@ import { Post } from "../types.ts";
 
 export function PostCard(post: Post): HTMLElement {
   const postDIV: HTMLElement = document.createElement("article");
-  
+
   postDIV.className = "post-card";
   postDIV.tabIndex = 1;
   postDIV.innerHTML = `
@@ -14,9 +14,9 @@ export function PostCard(post: Post): HTMLElement {
   postDIV.onclick = function () {
     dispatchEvent("post-clicked", {
       detail: {
-        postID: post.id
-      }
-    })
+        postID: post.id,
+      },
+    });
   };
 
   return postDIV;

@@ -11,6 +11,7 @@
   --color-5: orange;
   --color-6: rgb(64, 64, 65);
 }
+
 * {
   box-sizing: border-box;
   padding: 0;

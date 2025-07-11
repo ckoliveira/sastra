@@ -43,9 +43,7 @@
 .post-actions {
   display: flex;
   justify-content: space-between;
-  border-top: 10px solid var(--color-2);
-  border-radius: 10px;
-
+  border-bottom: 1px solid var(--color-6);
 }
 
 .post-title {

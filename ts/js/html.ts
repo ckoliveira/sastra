@@ -1,20 +1,19 @@
 export function getHTMLElement(elementIdentifier: string): HTMLElement {
-    const e: HTMLElement | null = document.querySelector(elementIdentifier);
+  const e: HTMLElement | null = document.querySelector(elementIdentifier);
 
-    if(!e) {
-        throw new Error(`${elementIdentifier} was not set or found`);
-    }
+  if (!e) {
+    throw new Error(`${elementIdentifier} was not set or found`);
+  }
 
-    return e;
+  return e;
 }
 
 export function removeHTMLElement(elementIdentifier: string): void {
-    const e: HTMLElement = getHTMLElement(elementIdentifier);
+  const e: HTMLElement = getHTMLElement(elementIdentifier);
 
-    e.remove();
+  e.remove();
 }
 
 export function doesElementExist(elementIdentifier: string): boolean {
-    return document.querySelector(elementIdentifier) ? true
-                                                     : false
+  return document.querySelector(elementIdentifier) ? true : false;
 }

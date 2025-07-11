@@ -22,4 +22,4 @@ export const PostMenu = () => `
 
         <input type="text" id=${POST_TAGS_INPUT} placeholder="Tags" />
     </section>
-`
+`;
