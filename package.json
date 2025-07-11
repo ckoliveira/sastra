@@ -1,0 +1,21 @@
+{
+  "name": "sastra",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sastra": "npx tsc && npx prettier . --write && node index.js"
+  },
+  "author": "ckoliveira",
+  "license": "ISC",
+  "description": "",
+  "type": "module",
+  "devDependencies": {
+    "prettier": "^3.6.2",
+    "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "chalk": "^5.4.1",
+    "express": "^5.1.0"
+  }
+}
