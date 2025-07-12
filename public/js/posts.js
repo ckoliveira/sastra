@@ -29,3 +29,6 @@ export function placeTags() {
     .map((tag) => `<a href="#">::${tag}</a>`)
     .join("");
 }
+export function isPostEmpty(post) {
+  return post.body.trim() === "" && post.title.trim() === "";
+}

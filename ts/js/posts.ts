@@ -2,7 +2,7 @@ import { PostCard } from "./components/post-card.ts";
 import { PostHTML } from "./components/post.ts";
 import { getHTMLElement } from "./html.ts";
 import { getPost, getPosts, upsertPost } from "./storage.ts";
-import { Post } from "./types.ts";
+import { Post, PostMenuInput } from "./types.ts";
 
 export function loadPosts(): void {
   const postCards: HTMLElement = getHTMLElement(".post-card-list");
@@ -40,4 +40,8 @@ export function placeTags(): void {
   usedTagsSection.innerHTML = usedTags
     .map((tag) => `<a href="#">::${tag}</a>`)
     .join("");
+}
+
+export function isPostEmpty(post: PostMenuInput): boolean {
+  return post.body.trim() === "" && post.title.trim() === "";
 }

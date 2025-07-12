@@ -8,7 +8,7 @@ export const PostMenu = () => `
     <section id=${POST_MENU_DIV}>
         <header class="post-menu-actions">
             <button id=${POST_MENU_SAVE_BUTTON}>Save Entry</button>
-            <div id=${POST_MENU_CLOSE_BUTTON}></div>
+            <h3 id="invalid-post-warning"> Post with empty body and title can't be made </h3>
         </header>
         
         <input type="text" placeholder="Title" id=${POST_TITLE_INPUT} />

@@ -21,8 +21,25 @@
   font-size: larger;
 }
 
+#invalid-post-warning {
+  color: rgb(255, 0, 0);
+  text-decoration: underline;
+  user-select: none;
+  opacity: 0;
+}
+
+@keyframes showWarning {
+  from {
+    opacity: 100%;
+  }
+  to {
+    opacity: 0%;
+  }
+}
+
 .post-menu-actions {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
+  gap: 10px;
 }
