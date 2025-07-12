@@ -4,7 +4,7 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: black;
+  background-color: rgba(0, 0, 0, 0.548);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -38,7 +38,7 @@
 .post-menu-sastra-logo img {
   width: 300px;
   filter: invert(80%) sepia(43%) saturate(640%) hue-rotate(191deg) brightness(106%) contrast(101%);
-  animation: rotateImage 10.5s linear infinite;
+  animation: rotateImage 60.5s linear infinite;
 }
 
 
