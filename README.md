@@ -4,7 +4,7 @@
 
 # Sastra TODO
 
-- [ ] Fix middle panel logo to make it always be visible even when scrolling
+- [ ] ~~Fix middle panel logo to make it always be visible even when scrolling~~ [DROPPED]
 - [ ] Add update and delete post option to post
 - [ ] Add Editing history to posts
 - [ ] Filter post list while typing in search bar
