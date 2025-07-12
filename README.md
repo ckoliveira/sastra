@@ -10,3 +10,4 @@
 - [ ] Filter post list while typing in search bar
 - [ ] Pick a better font and a better letter logo
 - [x] ~~Put post creation menu in the middle panel and show it every time a post is closed~~
+- [ ] Add button to scroll to the top of the page
