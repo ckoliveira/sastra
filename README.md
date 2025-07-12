@@ -12,3 +12,4 @@
 - [x] ~~Put post creation menu in the middle panel and show it every time a post is closed~~
 - [ ] Add button to scroll to the top of the page
 - [x] ~~Keep empty posts from being made~~
+- [x] ~~Save loaded post to cache so it loads when the page is reloaded~~

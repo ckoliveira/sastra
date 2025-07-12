@@ -22,6 +22,8 @@ export function showPost(postID: string): void {
   const postViewer: HTMLElement = getHTMLElement(".post-viewer");
 
   postViewer.innerHTML = PostHTML(post);
+
+  savePostIDToCache(postID);
 }
 
 export function getUsedTags(): string[] {
@@ -44,4 +46,23 @@ export function placeTags(): void {
 
 export function isPostEmpty(post: PostMenuInput): boolean {
   return post.body.trim() === "" && post.title.trim() === "";
+}
+
+export function savePostIDToCache(postID: string): void {
+  localStorage.setItem("sastra:cached-post", postID);
+}
+
+export function getCachedPostID(): string {
+  const cachedPostID: string | null =
+    localStorage.getItem("sastra:cached-post");
+
+  if (!cachedPostID) {
+    throw new Error("cached-post was not set in localStorage");
+  }
+
+  return cachedPostID;
+}
+
+export function loadCachedPost(): void {
+  showPost(getCachedPostID());
 }

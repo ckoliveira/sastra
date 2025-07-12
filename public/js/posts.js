@@ -15,6 +15,7 @@ export function showPost(postID) {
   const post = getPost(postID);
   const postViewer = getHTMLElement(".post-viewer");
   postViewer.innerHTML = PostHTML(post);
+  savePostIDToCache(postID);
 }
 export function getUsedTags() {
   let tags = [];
@@ -31,4 +32,17 @@ export function placeTags() {
 }
 export function isPostEmpty(post) {
   return post.body.trim() === "" && post.title.trim() === "";
+}
+export function savePostIDToCache(postID) {
+  localStorage.setItem("sastra:cached-post", postID);
+}
+export function getCachedPostID() {
+  const cachedPostID = localStorage.getItem("sastra:cached-post");
+  if (!cachedPostID) {
+    throw new Error("cached-post was not set in localStorage");
+  }
+  return cachedPostID;
+}
+export function loadCachedPost() {
+  showPost(getCachedPostID());
 }
