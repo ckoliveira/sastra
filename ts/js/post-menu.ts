@@ -38,3 +38,7 @@ export function getPostMenuInputs(): PostMenuInput {
     ).value.split(","),
   };
 }
+
+export function placePostMenu(): void {
+  dispatchEvent("post-menu-requested", {});
+}

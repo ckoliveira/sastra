@@ -26,3 +26,6 @@ export function getPostMenuInputs() {
     tags: getHTMLElement("#" + POST_TAGS_INPUT).value.split(","),
   };
 }
+export function placePostMenu() {
+  dispatchEvent("post-menu-requested", {});
+}

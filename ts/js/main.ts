@@ -5,7 +5,9 @@ import "./right-panel-menu.ts";
 
 import { loadPosts, placeTags } from "./posts.ts";
 import { setStorage } from "./storage.ts";
+import { placePostMenu } from "./post-menu.ts";
 
 setStorage();
 loadPosts();
 placeTags();
+placePostMenu();

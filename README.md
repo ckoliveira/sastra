@@ -9,4 +9,4 @@
 - [ ] Add Editing history to posts
 - [ ] Filter post list while typing in search bar
 - [ ] Pick a better font and a better letter logo
-
+- [ ] Put post creation menu in the middle panel and show it every time a post is closed

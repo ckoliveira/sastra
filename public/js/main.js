@@ -4,6 +4,8 @@ import "./post-menu.js";
 import "./right-panel-menu.js";
 import { loadPosts, placeTags } from "./posts.js";
 import { setStorage } from "./storage.js";
+import { placePostMenu } from "./post-menu.js";
 setStorage();
 loadPosts();
 placeTags();
+placePostMenu();
