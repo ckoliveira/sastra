@@ -5,8 +5,8 @@
 # Sastra TODO
 
 - [ ] Fix middle panel logo to make it always be visible even when scrolling
-- [ ] Add upade and delete post option to post
+- [ ] Add update and delete post option to post
 - [ ] Add Editing history to posts
 - [ ] Filter post list while typing in search bar
 - [ ] Pick a better font and a better letter logo
-- [ ] Put post creation menu in the middle panel and show it every time a post is closed
+- [x] ~~Put post creation menu in the middle panel and show it every time a post is closed~~
