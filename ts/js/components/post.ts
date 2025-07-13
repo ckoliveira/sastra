@@ -1,13 +1,15 @@
 import { Post } from "../types";
 
+export const CLOSE_POST_BUTTON: string = "close-post-button";
+
 export function PostHTML(post: Post): string {
-  const body: string = ` <article class="post">
+  const body: string = ` <article class="post" id=${post.id}>
       <section class="post-actions">
         <div>
           <button> edit </button>
           <button> delete </button>
         </div>
-        <button> close </button>
+        <button id=${CLOSE_POST_BUTTON}> close </button>
       </section>
       <h1 class="post-title"> ${post.title}</h1>
       <p class="post-body">${post.body}</p>

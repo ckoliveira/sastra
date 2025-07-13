@@ -1,5 +1,10 @@
 export function getHTMLElement(elementIdentifier) {
-  const e = document.querySelector(elementIdentifier);
+  let e;
+  if (elementIdentifier[0] === "#") {
+    e = document.getElementById(elementIdentifier.slice(1));
+  } else {
+    e = document.querySelector(elementIdentifier);
+  }
   if (!e) {
     throw new Error(`${elementIdentifier} was not set or found`);
   }

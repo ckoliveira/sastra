@@ -1,5 +1,7 @@
+import { getCachedPostID, savePostIDToCache } from "./cached-post.js";
 import { PostCard } from "./components/post-card.js";
-import { PostHTML } from "./components/post.js";
+import { CLOSE_POST_BUTTON, PostHTML } from "./components/post.js";
+import { dispatchEvent } from "./events/events.js";
 import { getHTMLElement } from "./html.js";
 import { getPost, getPosts } from "./storage.js";
 export function loadPosts() {
@@ -33,16 +35,14 @@ export function placeTags() {
 export function isPostEmpty(post) {
   return post.body.trim() === "" && post.title.trim() === "";
 }
-export function savePostIDToCache(postID) {
-  localStorage.setItem("sastra:cached-post", postID);
-}
-export function getCachedPostID() {
-  const cachedPostID = localStorage.getItem("sastra:cached-post");
-  if (!cachedPostID) {
-    throw new Error("cached-post was not set in localStorage");
-  }
-  return cachedPostID;
-}
-export function loadCachedPost() {
-  showPost(getCachedPostID());
+export function setClosePostButtonEvent() {
+  const closePostButton = getHTMLElement("#" + CLOSE_POST_BUTTON);
+  const postID = getCachedPostID();
+  closePostButton.onclick = function () {
+    dispatchEvent("post-closing-requested", {
+      detail: {
+        postID: postID,
+      },
+    });
+  };
 }

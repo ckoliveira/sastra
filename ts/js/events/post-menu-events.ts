@@ -21,7 +21,6 @@ document.addEventListener("post-menu-requested", (e) => {
     middlePanelDIV.innerHTML += PostMenu();
 
     setSavePostButtonEvent();
-    setClosePostMenuButtonEvent();
   }
 });
 
@@ -30,11 +29,11 @@ document.addEventListener("post-save-requested", (e) => {
 
   if (isPostEmpty(postInfo)) {
     console.warn("post with empyt body and title cant be made");
-    
+
     const invalidPostWarnLabel: HTMLElement = getHTMLElement(
       "#invalid-post-warning",
     );
-    
+
     invalidPostWarnLabel.style.animation = "showWarning 4.5s linear";
     invalidPostWarnLabel.addEventListener(
       "animationend",

@@ -1,5 +1,7 @@
+import { getCachedPostID, savePostIDToCache } from "./cached-post.ts";
 import { PostCard } from "./components/post-card.ts";
-import { PostHTML } from "./components/post.ts";
+import { CLOSE_POST_BUTTON, PostHTML } from "./components/post.ts";
+import { dispatchEvent } from "./events/events.ts";
 import { getHTMLElement } from "./html.ts";
 import { getPost, getPosts, upsertPost } from "./storage.ts";
 import { Post, PostMenuInput } from "./types.ts";
@@ -48,21 +50,16 @@ export function isPostEmpty(post: PostMenuInput): boolean {
   return post.body.trim() === "" && post.title.trim() === "";
 }
 
-export function savePostIDToCache(postID: string): void {
-  localStorage.setItem("sastra:cached-post", postID);
-}
+export function setClosePostButtonEvent(): void {
+  const closePostButton: HTMLElement = getHTMLElement("#" + CLOSE_POST_BUTTON);
 
-export function getCachedPostID(): string {
-  const cachedPostID: string | null =
-    localStorage.getItem("sastra:cached-post");
+  const postID: string = getCachedPostID();
 
-  if (!cachedPostID) {
-    throw new Error("cached-post was not set in localStorage");
-  }
-
-  return cachedPostID;
-}
-
-export function loadCachedPost(): void {
-  showPost(getCachedPostID());
+  closePostButton.onclick = function () {
+    dispatchEvent("post-closing-requested", {
+      detail: {
+        postID: postID,
+      },
+    });
+  };
 }

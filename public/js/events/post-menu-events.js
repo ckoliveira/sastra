@@ -4,11 +4,7 @@ import {
   getHTMLElement,
   removeHTMLElement,
 } from "../html.js";
-import {
-  getPostMenuInputs,
-  setClosePostMenuButtonEvent,
-  setSavePostButtonEvent,
-} from "../post-menu.js";
+import { getPostMenuInputs, setSavePostButtonEvent } from "../post-menu.js";
 import { isPostEmpty } from "../posts.js";
 import { upsertPost } from "../storage.js";
 import { dispatchEvent } from "./events.js";
@@ -17,7 +13,6 @@ document.addEventListener("post-menu-requested", (e) => {
     const middlePanelDIV = getHTMLElement(".middle-panel");
     middlePanelDIV.innerHTML += PostMenu();
     setSavePostButtonEvent();
-    setClosePostMenuButtonEvent();
   }
 });
 document.addEventListener("post-save-requested", (e) => {
