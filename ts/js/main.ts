@@ -6,14 +6,18 @@ import "./right-panel-menu.ts";
 import { loadPosts, placeTags } from "./posts.ts";
 import { setStorage } from "./storage.ts";
 import { placePostMenu } from "./post-menu.ts";
-import { getCachedPostID, loadCachedPost } from "./cached-post.ts";
+import {
+  getCachedPostID,
+  loadCachedPost,
+  setPostCache,
+} from "./cached-post.ts";
 
 setStorage();
+setPostCache();
 loadPosts();
 placeTags();
 
-console.log(typeof localStorage.getItem("sastra:cached-post"));
-if (getCachedPostID() !== "null") {
+if (getCachedPostID()) {
   loadCachedPost();
 } else {
   placePostMenu();

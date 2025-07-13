@@ -2,6 +2,12 @@ import { showPost } from "./posts.ts";
 
 const CACHED_POST_STORAGE_NAME: string = "sastra:cached-post";
 
+export function setPostCache(): void {
+  if (!localStorage.getItem(CACHED_POST_STORAGE_NAME)) {
+    localStorage.setItem(CACHED_POST_STORAGE_NAME, "");
+  }
+}
+
 export function savePostIDToCache(postID: string): void {
   localStorage.setItem(CACHED_POST_STORAGE_NAME, postID);
 }
@@ -11,7 +17,7 @@ export function getCachedPostID(): string {
     CACHED_POST_STORAGE_NAME,
   );
 
-  if (!cachedPostID) {
+  if (cachedPostID === null) {
     throw new Error("cached-post was not set in localStorage");
   }
 
@@ -23,5 +29,5 @@ export function loadCachedPost(): void {
 }
 
 export function clearCachedPost(): void {
-  localStorage.setItem(CACHED_POST_STORAGE_NAME, JSON.stringify(null));
+  localStorage.setItem(CACHED_POST_STORAGE_NAME, "");
 }
