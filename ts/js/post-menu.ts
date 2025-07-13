@@ -1,3 +1,4 @@
+import { getCachedPostID } from "./cached-post.ts";
 import {
   POST_BODY_INPUT,
   POST_MENU_CLOSE_BUTTON,
@@ -7,7 +8,7 @@ import {
 } from "./components/post-menu.ts";
 import { dispatchEvent } from "./events/events.ts";
 import { getHTMLElement } from "./html.ts";
-import { PostMenuInput } from "./types.ts";
+import { PostCreationInput } from "./types.ts";
 
 export function setSavePostButtonEvent(): void {
   const savePostButton: HTMLElement = getHTMLElement(
@@ -29,8 +30,9 @@ export function setClosePostMenuButtonEvent(): void {
   };
 }
 
-export function getPostMenuInputs(): PostMenuInput {
+export function getPostMenuInputs(): PostCreationInput {
   return {
+    id: getCachedPostID(),
     title: (getHTMLElement("#" + POST_TITLE_INPUT) as HTMLInputElement).value,
     body: (getHTMLElement("#" + POST_BODY_INPUT) as HTMLInputElement).value,
     tags: (
@@ -40,5 +42,9 @@ export function getPostMenuInputs(): PostMenuInput {
 }
 
 export function placePostMenu(): void {
-  dispatchEvent("post-menu-requested", {});
+  dispatchEvent("post-menu-requested", {
+    detail: {
+      mode: "create",
+    },
+  });
 }

@@ -1,6 +1,10 @@
 import { getCachedPostID, savePostIDToCache } from "./cached-post.js";
 import { PostCard } from "./components/post-card.js";
-import { CLOSE_POST_BUTTON, PostHTML } from "./components/post.js";
+import {
+  CLOSE_POST_BUTTON,
+  EDIT_POST_BUTTON,
+  PostHTML,
+} from "./components/post.js";
 import { dispatchEvent } from "./events/events.js";
 import { getHTMLElement } from "./html.js";
 import { getPost, getPosts } from "./storage.js";
@@ -42,6 +46,18 @@ export function setClosePostButtonEvent() {
     dispatchEvent("post-closing-requested", {
       detail: {
         postID: postID,
+      },
+    });
+  };
+}
+export function setEditPostButtonEvent() {
+  const editPostButton = getHTMLElement("#" + EDIT_POST_BUTTON);
+  const postID = getCachedPostID();
+  editPostButton.onclick = function () {
+    dispatchEvent("post-menu-requested", {
+      detail: {
+        postID: postID,
+        mode: "edit",
       },
     });
   };

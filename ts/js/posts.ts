@@ -1,10 +1,14 @@
 import { getCachedPostID, savePostIDToCache } from "./cached-post.ts";
 import { PostCard } from "./components/post-card.ts";
-import { CLOSE_POST_BUTTON, PostHTML } from "./components/post.ts";
+import {
+  CLOSE_POST_BUTTON,
+  EDIT_POST_BUTTON,
+  PostHTML,
+} from "./components/post.ts";
 import { dispatchEvent } from "./events/events.ts";
 import { getHTMLElement } from "./html.ts";
 import { getPost, getPosts, upsertPost } from "./storage.ts";
-import { Post, PostMenuInput } from "./types.ts";
+import { Post, PostCreationInput } from "./types.ts";
 
 export function loadPosts(): void {
   const postCards: HTMLElement = getHTMLElement(".post-card-list");
@@ -46,7 +50,7 @@ export function placeTags(): void {
     .join("");
 }
 
-export function isPostEmpty(post: PostMenuInput): boolean {
+export function isPostEmpty(post: PostCreationInput): boolean {
   return post.body.trim() === "" && post.title.trim() === "";
 }
 
@@ -59,6 +63,21 @@ export function setClosePostButtonEvent(): void {
     dispatchEvent("post-closing-requested", {
       detail: {
         postID: postID,
+      },
+    });
+  };
+}
+
+export function setEditPostButtonEvent(): void {
+  const editPostButton: HTMLElement = getHTMLElement("#" + EDIT_POST_BUTTON);
+
+  const postID: string = getCachedPostID();
+
+  editPostButton.onclick = function () {
+    dispatchEvent("post-menu-requested", {
+      detail: {
+        postID: postID,
+        mode: "edit",
       },
     });
   };

@@ -1,13 +1,21 @@
 import { clearCachedPost } from "../cached-post.ts";
 import { removeHTMLElement } from "../html.ts";
-import { loadPosts, setClosePostButtonEvent, showPost } from "../posts.ts";
+import {
+  loadPosts,
+  setClosePostButtonEvent,
+  setEditPostButtonEvent,
+  showPost,
+} from "../posts.ts";
 import { dispatchEvent } from "./events.ts";
 
 document.addEventListener("post-clicked", (e) => {
   const event = e as CustomEvent;
 
   showPost(event.detail.postID);
+
   setClosePostButtonEvent();
+  setEditPostButtonEvent();
+
   dispatchEvent("post-menu-closing-requested", {});
 });
 
@@ -22,5 +30,9 @@ document.addEventListener("post-closing-requested", (e) => {
   removeHTMLElement("#" + postID);
 
   clearCachedPost();
-  dispatchEvent("post-menu-requested", {});
+  dispatchEvent("post-menu-requested", {
+    detail: {
+      mode: "create",
+    },
+  });
 });

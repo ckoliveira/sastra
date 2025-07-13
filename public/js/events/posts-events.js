@@ -1,11 +1,17 @@
 import { clearCachedPost } from "../cached-post.js";
 import { removeHTMLElement } from "../html.js";
-import { loadPosts, setClosePostButtonEvent, showPost } from "../posts.js";
+import {
+  loadPosts,
+  setClosePostButtonEvent,
+  setEditPostButtonEvent,
+  showPost,
+} from "../posts.js";
 import { dispatchEvent } from "./events.js";
 document.addEventListener("post-clicked", (e) => {
   const event = e;
   showPost(event.detail.postID);
   setClosePostButtonEvent();
+  setEditPostButtonEvent();
   dispatchEvent("post-menu-closing-requested", {});
 });
 document.addEventListener("post-card-list-reloading-requested", (e) => {
@@ -16,5 +22,9 @@ document.addEventListener("post-closing-requested", (e) => {
   const postID = event.detail.postID;
   removeHTMLElement("#" + postID);
   clearCachedPost();
-  dispatchEvent("post-menu-requested", {});
+  dispatchEvent("post-menu-requested", {
+    detail: {
+      mode: "create",
+    },
+  });
 });

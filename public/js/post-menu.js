@@ -1,3 +1,4 @@
+import { getCachedPostID } from "./cached-post.js";
 import {
   POST_BODY_INPUT,
   POST_MENU_CLOSE_BUTTON,
@@ -21,11 +22,16 @@ export function setClosePostMenuButtonEvent() {
 }
 export function getPostMenuInputs() {
   return {
+    id: getCachedPostID(),
     title: getHTMLElement("#" + POST_TITLE_INPUT).value,
     body: getHTMLElement("#" + POST_BODY_INPUT).value,
     tags: getHTMLElement("#" + POST_TAGS_INPUT).value.split(","),
   };
 }
 export function placePostMenu() {
-  dispatchEvent("post-menu-requested", {});
+  dispatchEvent("post-menu-requested", {
+    detail: {
+      mode: "create",
+    },
+  });
 }

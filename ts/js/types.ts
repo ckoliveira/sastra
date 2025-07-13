@@ -10,7 +10,8 @@ export type Post = {
 
 export type PostCollection = Record<string, Post>;
 
-export type PostMenuInput = {
+export type PostCreationInput = {
+  id: string;
   title: string;
   body: string;
   tags: string[];

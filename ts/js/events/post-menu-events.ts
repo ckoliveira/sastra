@@ -4,30 +4,36 @@ import {
   getHTMLElement,
   removeHTMLElement,
 } from "../html.ts";
-import {
-  getPostMenuInputs,
-  setClosePostMenuButtonEvent,
-  setSavePostButtonEvent,
-} from "../post-menu.ts";
+import { getPostMenuInputs, setSavePostButtonEvent } from "../post-menu.ts";
 import { isPostEmpty } from "../posts.ts";
-import { upsertPost } from "../storage.ts";
-import { PostMenuInput } from "../types.ts";
+import { getPost, upsertPost } from "../storage.ts";
+import { Post, PostCreationInput } from "../types.ts";
 import { dispatchEvent } from "./events.ts";
 
 document.addEventListener("post-menu-requested", (e) => {
   if (!doesElementExist("#" + POST_MENU_DIV)) {
+    const event = e as CustomEvent;
     const middlePanelDIV: HTMLElement = getHTMLElement(".middle-panel");
 
-    middlePanelDIV.innerHTML += PostMenu();
+    console.debug(
+      `[post-menu-events.ts] Opening post menu in ${event.detail.mode} mode`,
+    );
+
+    if (event.detail.mode === "edit") {
+      const post: Post = getPost(event.detail.postID);
+      middlePanelDIV.innerHTML += PostMenu(post.title, post.body, post.tags);
+    } else {
+      middlePanelDIV.innerHTML += PostMenu();
+    }
 
     setSavePostButtonEvent();
   }
 });
 
 document.addEventListener("post-save-requested", (e) => {
-  const postInfo: PostMenuInput = getPostMenuInputs();
+  const postInput: PostCreationInput = getPostMenuInputs();
 
-  if (isPostEmpty(postInfo)) {
+  if (isPostEmpty(postInput)) {
     console.warn("post with empyt body and title cant be made");
 
     const invalidPostWarnLabel: HTMLElement = getHTMLElement(
@@ -43,11 +49,27 @@ document.addEventListener("post-save-requested", (e) => {
       { once: true },
     );
   } else {
+    let id: string;
+    let createdAt: number;
+    let updatedAt: number;
+
+    if (postInput.id) {
+      const post: Post = getPost(postInput.id);
+
+      id = post.id;
+      createdAt = post.createdAt;
+      updatedAt = Date.now();
+    } else {
+      id = crypto.randomUUID();
+      createdAt = Date.now();
+      updatedAt = Date.now();
+    }
+
     upsertPost({
-      ...postInfo,
-      id: crypto.randomUUID(),
-      createdAt: Date.now(),
-      updatedAt: Date.now(),
+      ...postInput,
+      id: id,
+      createdAt: createdAt,
+      updatedAt: updatedAt,
     });
 
     dispatchEvent("post-menu-closing-requested", {});

@@ -1,9 +1,10 @@
 export const CLOSE_POST_BUTTON = "close-post-button";
+export const EDIT_POST_BUTTON = "edit-post-button";
 export function PostHTML(post) {
   const body = ` <article class="post" id=${post.id}>
       <section class="post-actions">
         <div>
-          <button> edit </button>
+          <button id=${EDIT_POST_BUTTON}> edit </button>
           <button> delete </button>
         </div>
         <button id=${CLOSE_POST_BUTTON}> close </button>
