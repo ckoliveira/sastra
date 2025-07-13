@@ -1,3 +1,4 @@
+import { dispatchEvent } from "./events/events.ts";
 import { showPost } from "./posts.ts";
 
 const CACHED_POST_STORAGE_NAME: string = "sastra:cached-post";
@@ -25,7 +26,11 @@ export function getCachedPostID(): string {
 }
 
 export function loadCachedPost(): void {
-  showPost(getCachedPostID());
+  dispatchEvent("post-clicked", {
+    detail: {
+      postID: getCachedPostID(),
+    },
+  });
 }
 
 export function clearCachedPost(): void {

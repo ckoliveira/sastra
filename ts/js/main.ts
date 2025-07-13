@@ -18,7 +18,9 @@ loadPosts();
 placeTags();
 
 if (getCachedPostID()) {
+  console.log("loading cached post");
   loadCachedPost();
 } else {
+  console.warn("no cached post, showing post menu");
   placePostMenu();
 }

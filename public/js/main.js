@@ -5,13 +5,19 @@ import "./right-panel-menu.js";
 import { loadPosts, placeTags } from "./posts.js";
 import { setStorage } from "./storage.js";
 import { placePostMenu } from "./post-menu.js";
-import { getCachedPostID, loadCachedPost } from "./cached-post.js";
+import {
+  getCachedPostID,
+  loadCachedPost,
+  setPostCache,
+} from "./cached-post.js";
 setStorage();
+setPostCache();
 loadPosts();
 placeTags();
-console.log(typeof localStorage.getItem("sastra:cached-post"));
-if (getCachedPostID() !== "null") {
+if (getCachedPostID()) {
+  console.log("loading cached post");
   loadCachedPost();
 } else {
+  console.warn("no cached post, showing post menu");
   placePostMenu();
 }

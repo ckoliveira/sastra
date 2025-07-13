@@ -56,5 +56,7 @@ document.addEventListener("post-save-requested", (e) => {
 });
 
 document.addEventListener("post-menu-closing-requested", (e) => {
-  removeHTMLElement("#" + POST_MENU_DIV);
+  if (doesElementExist("#" + POST_MENU_DIV)) {
+    removeHTMLElement("#" + POST_MENU_DIV);
+  }
 });
