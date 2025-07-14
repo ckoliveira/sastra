@@ -18,3 +18,7 @@
 - [x] ~~Add close button to post menu~~
 - [x] ~~Fix bug keeping the "close post" button from work after a post is edited (works again after the page is reloaded)~~
 - [x] ~~Reload post list after a post is deleted~~
+- [ ] Fix problem that keeps a post from being closed when post menu is closed after being launched from the side panel
+- [ ] Create event to update used tags automatically when a new post is created
+- [x] ~~Order used tags alphabetically~~
+- [ ] Add blog mode (posts are displayed sequentially in a single page instead of being picked from a post card list and displayed individually)

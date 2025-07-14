@@ -28,7 +28,9 @@ export function getUsedTags() {
   let tags = [];
   const posts = Object.values(getPosts());
   posts.forEach((post) => (tags = tags.concat(post.tags)));
-  return [...new Set(tags)];
+  return [...new Set(tags)].sort((a, b) =>
+    a.toLowerCase().localeCompare(b.toLowerCase()),
+  );
 }
 export function placeTags() {
   const usedTagsSection = getHTMLElement(".used-tags");

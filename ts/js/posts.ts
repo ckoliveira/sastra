@@ -39,7 +39,9 @@ export function getUsedTags(): string[] {
 
   posts.forEach((post) => (tags = tags.concat(post.tags)));
 
-  return [...new Set(tags)];
+  return [...new Set(tags)].sort((a, b) =>
+    a.toLowerCase().localeCompare(b.toLowerCase()),
+  );
 }
 
 export function placeTags(): void {
