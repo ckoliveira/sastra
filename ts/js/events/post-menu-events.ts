@@ -4,7 +4,11 @@ import {
   getHTMLElement,
   removeHTMLElement,
 } from "../html.ts";
-import { getPostMenuInputs, setSavePostButtonEvent } from "../post-menu.ts";
+import {
+  getPostMenuInputs,
+  setClosePostMenuButtonEvent,
+  setSavePostButtonEvent,
+} from "../post-menu.ts";
 import { isPostEmpty } from "../posts.ts";
 import { getPost, upsertPost } from "../storage.ts";
 import { Post, PostCreationInput } from "../types.ts";
@@ -27,6 +31,7 @@ document.addEventListener("post-menu-requested", (e) => {
     }
 
     setSavePostButtonEvent();
+    setClosePostMenuButtonEvent();
   }
 });
 
