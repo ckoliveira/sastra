@@ -1,3 +1,4 @@
+import { clearCachedPost } from "./cached-post.ts";
 import { Post, PostCollection } from "./types.ts";
 
 export function setStorage(): void {
@@ -38,4 +39,12 @@ export function upsertPost(post: Post): Post {
   localStorage.setItem("posts", JSON.stringify(posts));
 
   return getPost(post.id);
+}
+
+export function deletePost(postID: string): void {
+  const posts: PostCollection = getPosts();
+
+  delete posts[postID];
+
+  localStorage.setItem("posts", JSON.stringify(posts));
 }

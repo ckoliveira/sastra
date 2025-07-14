@@ -2,13 +2,14 @@ import { Post } from "../types";
 
 export const CLOSE_POST_BUTTON: string = "close-post-button";
 export const EDIT_POST_BUTTON: string = "edit-post-button";
+export const DELETE_POST_BUTTON: string = "delete-post-button";
 
 export function PostHTML(post: Post): string {
   const body: string = ` <article class="post" id=${post.id}>
       <section class="post-actions">
         <div>
           <button id=${EDIT_POST_BUTTON}> edit </button>
-          <button> delete </button>
+          <button id=${DELETE_POST_BUTTON}> delete </button>
         </div>
         <button id=${CLOSE_POST_BUTTON}> close </button>
       </section>

@@ -26,3 +26,8 @@ export function upsertPost(post) {
   localStorage.setItem("posts", JSON.stringify(posts));
   return getPost(post.id);
 }
+export function deletePost(postID) {
+  const posts = getPosts();
+  delete posts[postID];
+  localStorage.setItem("posts", JSON.stringify(posts));
+}

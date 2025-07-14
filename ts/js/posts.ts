@@ -2,6 +2,7 @@ import { getCachedPostID, savePostIDToCache } from "./cached-post.ts";
 import { PostCard } from "./components/post-card.ts";
 import {
   CLOSE_POST_BUTTON,
+  DELETE_POST_BUTTON,
   EDIT_POST_BUTTON,
   PostHTML,
 } from "./components/post.ts";
@@ -78,6 +79,22 @@ export function setEditPostButtonEvent(): void {
       detail: {
         postID: postID,
         mode: "edit",
+      },
+    });
+  };
+}
+
+export function setDeletePostButtonEvent(): void {
+  const deletePostButton: HTMLElement = getHTMLElement(
+    "#" + DELETE_POST_BUTTON,
+  );
+
+  const postID: string = getCachedPostID();
+
+  deletePostButton.onclick = function () {
+    dispatchEvent("post-deletion-required", {
+      detail: {
+        postID: postID,
       },
     });
   };
