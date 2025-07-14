@@ -15,5 +15,6 @@
 - [ ] Add button to scroll to the top of the page
 - [x] ~~Keep empty posts from being made~~
 - [x] ~~Save loaded post to cache so it loads when the page is reloaded~~
-- [x] Add close button to post menu
+- [x] ~~Add close button to post menu~~
 - [ ] Fix bug keeping the "close post" button from work after a post is edited (works again after the page is reloaded)
+- [x] ~~Reload post list after a post is deleted~~

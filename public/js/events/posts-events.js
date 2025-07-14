@@ -41,4 +41,5 @@ document.addEventListener("post-deletion-required", (e) => {
       mode: "create",
     },
   });
+  dispatchEvent("post-card-list-reloading-requested", {});
 });

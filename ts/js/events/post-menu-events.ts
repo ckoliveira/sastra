@@ -79,6 +79,7 @@ document.addEventListener("post-save-requested", (e) => {
 
     dispatchEvent("post-menu-closing-requested", {});
     dispatchEvent("post-card-list-reloading-requested", {});
+    dispatchEvent("post-clicked", {});
   }
 });
 
