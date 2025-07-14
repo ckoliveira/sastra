@@ -82,7 +82,7 @@ document.addEventListener("post-save-requested", (e) => {
     dispatchEvent("post-card-list-reloading-requested", {});
     dispatchEvent("post-clicked", {
       detail: {
-        postID: getCachedPostID(),
+        postID: id,
       },
     });
   }
