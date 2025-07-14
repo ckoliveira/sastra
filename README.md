@@ -16,5 +16,5 @@
 - [x] ~~Keep empty posts from being made~~
 - [x] ~~Save loaded post to cache so it loads when the page is reloaded~~
 - [x] ~~Add close button to post menu~~
-- [ ] Fix bug keeping the "close post" button from work after a post is edited (works again after the page is reloaded)
+- [x] ~~Fix bug keeping the "close post" button from work after a post is edited (works again after the page is reloaded)~~
 - [x] ~~Reload post list after a post is deleted~~

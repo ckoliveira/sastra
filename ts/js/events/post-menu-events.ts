@@ -1,3 +1,4 @@
+import { getCachedPostID } from "../cached-post.ts";
 import { POST_MENU_DIV, PostMenu } from "../components/post-menu.ts";
 import {
   doesElementExist,
@@ -79,7 +80,11 @@ document.addEventListener("post-save-requested", (e) => {
 
     dispatchEvent("post-menu-closing-requested", {});
     dispatchEvent("post-card-list-reloading-requested", {});
-    dispatchEvent("post-clicked", {});
+    dispatchEvent("post-clicked", {
+      detail: {
+        postID: getCachedPostID(),
+      },
+    });
   }
 });
 
