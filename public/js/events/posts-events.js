@@ -36,6 +36,7 @@ document.addEventListener("post-deletion-required", (e) => {
   deletePost(postID);
   removeHTMLElement("#" + postID);
   clearCachedPost();
+  dispatchEvent("post-card-list-reloading-requested", {});
   dispatchEvent("post-menu-requested", {
     detail: {
       mode: "create",
