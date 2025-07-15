@@ -1,5 +1,4 @@
 import { dispatchEvent } from "./events/events.ts";
-import { showPost } from "./posts.ts";
 
 const CACHED_POST_STORAGE_NAME: string = "sastra:cached-post";
 
@@ -11,6 +10,7 @@ export function setPostCache(): void {
 
 export function savePostIDToCache(postID: string): void {
   localStorage.setItem(CACHED_POST_STORAGE_NAME, postID);
+  console.debug(`[cached-post.ts] Post Cache was set to ${getCachedPostID()}`);
 }
 
 export function getCachedPostID(): string {
@@ -34,5 +34,6 @@ export function loadCachedPost(): void {
 }
 
 export function clearCachedPost(): void {
+  console.debug("[cached-post.ts] Post Cache was cleared");
   localStorage.setItem(CACHED_POST_STORAGE_NAME, "");
 }

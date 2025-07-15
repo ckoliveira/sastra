@@ -7,6 +7,7 @@ export function setPostCache() {
 }
 export function savePostIDToCache(postID) {
   localStorage.setItem(CACHED_POST_STORAGE_NAME, postID);
+  console.debug(`[cached-post.ts] Post Cache was set to ${getCachedPostID()}`);
 }
 export function getCachedPostID() {
   const cachedPostID = localStorage.getItem(CACHED_POST_STORAGE_NAME);
@@ -23,5 +24,6 @@ export function loadCachedPost() {
   });
 }
 export function clearCachedPost() {
+  console.debug("[cached-post.ts] Post Cache was cleared");
   localStorage.setItem(CACHED_POST_STORAGE_NAME, "");
 }
