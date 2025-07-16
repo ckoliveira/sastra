@@ -1,8 +1,8 @@
-.index-body {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+.index-wrapper {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 .footer {
   margin-top: 0.5em;
@@ -19,4 +19,9 @@
 
 .enter-link {
   font-size: 2em;
+}
+
+.transliteration {
+  color: rgb(35, 35, 40);
+  font-style: italic;
 }
