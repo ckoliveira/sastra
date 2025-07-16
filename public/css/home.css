@@ -97,6 +97,9 @@
   pointer-events: none;
 }
 
+.home-logo {
+  text-align: center;
+}
 #search-input {
   margin-bottom: 2em;
 }
