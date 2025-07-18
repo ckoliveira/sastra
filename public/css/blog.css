@@ -1,0 +1,68 @@
+.blog-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-1);
+}
+
+#posts-container {
+  width: 30vw;
+  margin: 7em auto;
+  display: flex;
+  flex-direction: column;
+  gap: 3em;
+}
+
+.blog-post {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7em;
+}
+
+.blog-post-wrapper {
+  border: 1px solid rgb(63, 63, 63);
+  border-radius: 10px;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.blog-post-header {
+  margin-bottom: 1em;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.blog-post-body {
+  white-space: pre-wrap;
+}
+
+.blog-post-timestamps {
+  display: flex;
+  justify-content: space-between;
+  font-size: small;
+  font-weight: bold;
+  color: var(--color-3);
+}
+
+.blog-post-timestamps time {
+  color: var(--color-2);
+  font-weight: 500;
+}
+
+.blog-post-tags {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  padding: 1em;
+}
+
+.blog-post-tags div {
+  padding: 0.5em;
+}
