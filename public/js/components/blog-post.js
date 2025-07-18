@@ -13,7 +13,8 @@ export const BlogPost = (post) => /*HTML*/ `
 
         ${
           !(post.tags.length === 1 && post.tags[0] === "")
-            ? `<footer class="blog-post-tags">
+            ? /*HTML*/
+              `<footer class="blog-post-tags">
                         <p> Descriptors: </p>
                         <div>
                             ${post.tags

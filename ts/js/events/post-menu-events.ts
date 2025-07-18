@@ -1,4 +1,3 @@
-import { getCachedPostID } from "../cached-post.ts";
 import { POST_MENU_DIV, PostMenu } from "../components/post-menu.ts";
 import {
   doesElementExist,

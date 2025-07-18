@@ -13,9 +13,10 @@ export const BlogPost = (post: Post) => /*HTML*/ `
             <p class="blog-post-body">${post.body}</p>
         </div>
 
-        ${!(post.tags.length === 1 && post.tags[0] === "")
-                ? /*HTML*/ 
-                `<footer class="blog-post-tags">
+        ${
+          !(post.tags.length === 1 && post.tags[0] === "")
+            ? /*HTML*/
+              `<footer class="blog-post-tags">
                         <p> Descriptors: </p>
                         <div>
                             ${post.tags
@@ -27,7 +28,7 @@ export const BlogPost = (post: Post) => /*HTML*/ `
                               .join(", ")}
                         </div>
                     </footer>`
-                : ""
+            : ""
         }
     </article>
 `;
