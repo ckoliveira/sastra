@@ -15,17 +15,16 @@ export const BlogPost = (post) => /*HTML*/ `
           !(post.tags.length === 1 && post.tags[0] === "")
             ? /*HTML*/
               `<footer class="blog-post-tags">
-                        <p> Descriptors: </p>
-                        <div>
-                            ${post.tags
-                              .map((tag) => tag.trim())
-                              .map(
-                                (tag) =>
-                                  `<a href="get-post=${tag}">::${tag}</a>`,
-                              )
-                              .join(", ")}
-                        </div>
-                    </footer>`
+                    <p> Descriptors: </p>
+                    <div>
+                        ${post.tags
+                          .map((tag) => tag.trim())
+                          .map(
+                            (tag) => `<a href="get-post=${tag}">::${tag}</a>`,
+                          )
+                          .join(", ")}
+                    </div>
+                </footer>`
             : ""
         }
     </article>

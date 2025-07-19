@@ -10,7 +10,14 @@ const postsContainer: HTMLElement = getHTMLElement("#posts-container");
 
 postsContainer.innerHTML = "";
 
+const blogUrlParams: URLSearchParams = new URLSearchParams(
+  window.location.search,
+);
+
+const filter: string = decodeURIComponent(blogUrlParams.get("tag") || "");
+
 postsContainer.innerHTML = Object.values(posts)
+  .filter((p) => p.tags.includes(filter))
   .sort((a, b) => b.createdAt - a.createdAt)
   .map((p) => BlogPost(p))
   .join(" ");

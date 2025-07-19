@@ -49,7 +49,7 @@ export function placeTags(): void {
   const usedTags: string[] = getUsedTags();
 
   usedTagsSection.innerHTML = usedTags
-    .map((tag) => `<a href="#">::${tag}</a>`)
+    .map((tag) => `<a href="blog?tag=${tag}">::${tag}</a>`)
     .join("");
 }
 

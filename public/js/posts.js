@@ -36,7 +36,7 @@ export function placeTags() {
   const usedTagsSection = getHTMLElement(".used-tags");
   const usedTags = getUsedTags();
   usedTagsSection.innerHTML = usedTags
-    .map((tag) => `<a href="#">::${tag}</a>`)
+    .map((tag) => `<a href="blog?tag=${tag}">::${tag}</a>`)
     .join("");
 }
 export function isPostEmpty(post) {
