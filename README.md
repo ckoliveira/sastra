@@ -23,3 +23,4 @@
 - [x] <span style="color: #454545">Add blog mode (posts are displayed sequentially in a single page instead of being picked from a post card list and displayed individually) [BASE VERSION] </span>
 - [ ] Add scroll to top and bottom buttons to posts
 - [x] Add possibility to filter post by tags
+- [x] Fix empty string being stored as tag when user creates post without input any tags

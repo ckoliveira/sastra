@@ -16,6 +16,8 @@ const blogUrlParams: URLSearchParams = new URLSearchParams(
 
 const filter: string = decodeURIComponent(blogUrlParams.get("tag") || "");
 
+console.log(filter);
+
 postsContainer.innerHTML = Object.values(posts)
   .filter((p) => p.tags.includes(filter))
   .sort((a, b) => b.createdAt - a.createdAt)

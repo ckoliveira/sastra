@@ -53,6 +53,12 @@ export function placeTags(): void {
     .join("");
 }
 
+export function postHasTags(postID: string): boolean {
+  const post: Post = getPost(postID);
+
+  return !(post.tags.length === 1 && post.tags[0] === "");
+}
+
 export function isPostEmpty(post: PostCreationInput): boolean {
   return post.body.trim() === "" && post.title.trim() === "";
 }

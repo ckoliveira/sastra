@@ -39,6 +39,10 @@ export function placeTags() {
     .map((tag) => `<a href="blog?tag=${tag}">::${tag}</a>`)
     .join("");
 }
+export function postHasTags(postID) {
+  const post = getPost(postID);
+  return !(post.tags.length === 1 && post.tags[0] === "");
+}
 export function isPostEmpty(post) {
   return post.body.trim() === "" && post.title.trim() === "";
 }

@@ -70,9 +70,16 @@ document.addEventListener("post-save-requested", (e) => {
       updatedAt = Date.now();
     }
 
+    const tags: string[] = !(
+      postInput.tags.length === 1 && postInput.tags[0] === ""
+    )
+      ? postInput.tags
+      : [];
+
     upsertPost({
       ...postInput,
       id: id,
+      tags: tags,
       createdAt: createdAt,
       updatedAt: updatedAt,
     });
