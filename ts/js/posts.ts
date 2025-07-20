@@ -11,10 +11,10 @@ import { getHTMLElement } from "./html.ts";
 import { getPost, getPosts, upsertPost } from "./storage.ts";
 import { Post, PostCreationInput } from "./types.ts";
 
-export function loadPosts(): void {
+export function loadPosts(filter: string = ""): void {
   const postCards: HTMLElement = getHTMLElement(".post-card-list");
 
-  const posts: Post[] = Object.values(getPosts());
+  const posts: Post[] = Object.values(getPosts(filter));
 
   postCards.innerHTML = "";
 

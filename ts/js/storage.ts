@@ -7,14 +7,28 @@ export function setStorage(): void {
   }
 }
 
-export function getPosts(): PostCollection {
+export function getPosts(filter: string = ""): PostCollection {
   const posts: string | null = localStorage.getItem("posts");
 
   if (!posts) {
     throw new Error("posts was not set in localStorage");
   }
 
-  return JSON.parse(posts);
+  if (!filter) {
+    return JSON.parse(posts);
+  } else {
+    const decodedPosts: PostCollection = JSON.parse(posts);
+
+    filter = filter.toLowerCase();
+
+    return Object.fromEntries(
+      Object.entries(decodedPosts).filter(
+        ([postID, post]) =>
+          post.body.toLowerCase().includes(filter) ||
+          post.title.toLowerCase().includes(filter),
+      ),
+    );
+  }
 }
 
 export function getPost(postID: string): Post {

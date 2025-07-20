@@ -3,12 +3,24 @@ export function setStorage() {
     localStorage.setItem("posts", JSON.stringify({}));
   }
 }
-export function getPosts() {
+export function getPosts(filter = "") {
   const posts = localStorage.getItem("posts");
   if (!posts) {
     throw new Error("posts was not set in localStorage");
   }
-  return JSON.parse(posts);
+  if (!filter) {
+    return JSON.parse(posts);
+  } else {
+    const decodedPosts = JSON.parse(posts);
+    filter = filter.toLowerCase();
+    return Object.fromEntries(
+      Object.entries(decodedPosts).filter(
+        ([postID, post]) =>
+          post.body.toLowerCase().includes(filter) ||
+          post.title.toLowerCase().includes(filter),
+      ),
+    );
+  }
 }
 export function getPost(postID) {
   const posts = getPosts();

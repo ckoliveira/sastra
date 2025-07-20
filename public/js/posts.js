@@ -9,9 +9,9 @@ import {
 import { dispatchEvent } from "./events/events.js";
 import { getHTMLElement } from "./html.js";
 import { getPost, getPosts } from "./storage.js";
-export function loadPosts() {
+export function loadPosts(filter = "") {
   const postCards = getHTMLElement(".post-card-list");
-  const posts = Object.values(getPosts());
+  const posts = Object.values(getPosts(filter));
   postCards.innerHTML = "";
   posts
     .sort((a, b) => b.createdAt - a.createdAt)

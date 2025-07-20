@@ -9,7 +9,8 @@
 - [x] <span style="color: #454545">Add post delete option </span>
 - [x] <span style="color: #454545">Add option to remove post from middle panel </span>
 - [ ] Add Editing history to posts
-- [ ] Filter post list while typing in search bar
+- [ ] ~~Filter post list while typing in search bar~~ [DROPPED]
+- [x] Add search post button and search bar
 - [x] <span style="color: #454545">Pick a better font and a better letter logo </span>
 - [x] <span style="color: #454545">Put post creation menu in the middle panel and show it every time a post is closed </span>
 - [ ] Add button to scroll to the top of the page

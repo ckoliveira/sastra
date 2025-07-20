@@ -23,7 +23,9 @@ document.addEventListener("post-clicked", (e) => {
 });
 
 document.addEventListener("post-card-list-reloading-requested", (e) => {
-  loadPosts();
+  const event = e as CustomEvent;
+
+  loadPosts(event.detail.postsFilter);
 });
 
 document.addEventListener("post-closing-requested", (e) => {

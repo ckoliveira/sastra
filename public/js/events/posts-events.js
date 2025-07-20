@@ -18,7 +18,8 @@ document.addEventListener("post-clicked", (e) => {
   dispatchEvent("post-menu-closing-requested", {});
 });
 document.addEventListener("post-card-list-reloading-requested", (e) => {
-  loadPosts();
+  const event = e;
+  loadPosts(event.detail.postsFilter);
 });
 document.addEventListener("post-closing-requested", (e) => {
   const event = e;
