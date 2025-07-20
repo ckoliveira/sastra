@@ -1,3 +1,4 @@
+import { getCachedPostID } from "../cached-post.js";
 import { POST_MENU_DIV, PostMenu } from "../components/post-menu.js";
 import {
   doesElementExist,
@@ -16,9 +17,11 @@ document.addEventListener("post-menu-requested", (e) => {
   if (!doesElementExist("#" + POST_MENU_DIV)) {
     const event = e;
     const middlePanelDIV = getHTMLElement(".middle-panel");
+    const postViewerDIV = getHTMLElement(".post-viewer");
     console.debug(
       `[post-menu-events.ts] Opening post menu in ${event.detail.mode} mode`,
     );
+    postViewerDIV.innerHTML = "";
     if (event.detail.mode === "edit") {
       const post = getPost(event.detail.postID);
       middlePanelDIV.innerHTML += PostMenu(post.title, post.body, post.tags);
@@ -83,5 +86,12 @@ document.addEventListener("post-save-requested", (e) => {
 document.addEventListener("post-menu-closing-requested", (e) => {
   if (doesElementExist("#" + POST_MENU_DIV)) {
     removeHTMLElement("#" + POST_MENU_DIV);
+    if (getCachedPostID()) {
+      dispatchEvent("post-clicked", {
+        detail: {
+          postID: getCachedPostID(),
+        },
+      });
+    }
   }
 });
