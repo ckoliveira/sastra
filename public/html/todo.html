@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/main.css" />
+    <title>Sastra TODO</title>
+  </head>
+  <body>
+    <header class="todo-header">
+      <h1>Sastra Objectives</h1>
+
+      <div>
+        <input 
+            type="text" 
+            placeholder="Enter a new objective"
+            id="new-objective-input" 
+        />
+
+        <button id="new-objective-button">Save</button>
+      </div>
+    </header>
+    <div class="todo-main-panel">
+      <section class="dropped-objectives">
+        <header class="section-header">
+          <h1>Dropped</h1>
+        </header>
+      </section>
+      <section class="planned-objectives">
+        <header class="section-header">
+          <h1>Planned</h1>
+        </header>
+      </section>
+      <section class="finished-objectives">
+        <header class="section-header">
+          <h1>Finished</h1>
+        </header>
+      </section>
+    </div>
+    <script type="module" src="/js/todo/main.js"></script>
+  </body>
+</html>

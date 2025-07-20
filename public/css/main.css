@@ -3,6 +3,7 @@
 @import url("/css/posts.css");
 @import url("/css/post-menu.css");
 @import url("/css/blog.css");
+@import url("/css/todo.css");
 
 @import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap");
 
@@ -80,7 +81,6 @@ textarea {
   border-bottom: 2px solid var(--color-3);
   outline: none;
   height: 35px;
-  margin-top: 1.2em;
   padding: 0.5em;
 }
 

@@ -1,0 +1,51 @@
+.todo-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em;
+}
+
+.todo-header div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5em;
+}
+
+.todo-main-panel {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 50vh;
+  width: 60vw;
+  columns: 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2em;
+}
+
+.dropped-objectives,
+.planned-objectives,
+.finished-objectives {
+  width: 30%;
+  height: 100%;
+  border-bottom: 3px solid var(--color-3);
+  border-radius: 10px;
+}
+
+.section-header {
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  background-color: var(--color-3);
+  padding-block: 0.6em;
+}
+
+.section-header h1 {
+  color: var(--color-1);
+  text-align: center;
+}

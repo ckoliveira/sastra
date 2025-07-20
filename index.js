@@ -15,8 +15,8 @@ app.get("/home", (req, res) => {
   res.sendFile(path.join(`${process.cwd()}`, "public", "/html/home.html"));
 });
 
-app.get("/blog", (req, res) => {
-  res.sendFile(path.join(`${process.cwd()}`, "public", "/html/blog.html"));
+app.get("/todo", (req, res) => {
+  res.sendFile(path.join(`${process.cwd()}`, "public", "/html/todo.html"));
 });
 
 const url = chalk.bold.underline(`http://localhost:${port}`);
