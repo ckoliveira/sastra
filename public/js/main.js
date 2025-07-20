@@ -1,9 +1,10 @@
 import "./events/posts-events.js";
 import "./events/post-menu-events.js";
+import "./events/right-panel-events.js";
 import "./post-menu.js";
 import "./left-panel-search.js";
 import "./right-panel-menu.js";
-import { loadPosts, placeTags } from "./posts.js";
+import { loadPosts, placeUsedTags } from "./posts.js";
 import { setStorage } from "./storage.js";
 import { placePostMenu } from "./post-menu.js";
 import {
@@ -14,7 +15,7 @@ import {
 setStorage();
 setPostCache();
 loadPosts();
-placeTags();
+placeUsedTags();
 if (getCachedPostID()) {
   loadCachedPost();
 } else {

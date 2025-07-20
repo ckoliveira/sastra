@@ -32,7 +32,7 @@ export function getUsedTags() {
     a.toLowerCase().localeCompare(b.toLowerCase()),
   );
 }
-export function placeTags() {
+export function placeUsedTags() {
   const usedTagsSection = getHTMLElement(".used-tags");
   const usedTags = getUsedTags();
   usedTagsSection.innerHTML = usedTags

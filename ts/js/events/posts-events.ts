@@ -49,7 +49,14 @@ document.addEventListener("post-deletion-required", (e) => {
   removeHTMLElement("#" + postID);
   clearCachedPost();
 
-  dispatchEvent("post-card-list-reloading-requested", {});
+  dispatchEvent("post-card-list-reloading-requested", {
+    detail: {
+      postsFilter: "",
+    },
+  });
+
+  dispatchEvent("used-tags-reloading-requested", {});
+
   dispatchEvent("post-menu-requested", {
     detail: {
       mode: "create",

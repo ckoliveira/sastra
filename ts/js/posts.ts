@@ -44,7 +44,7 @@ export function getUsedTags(): string[] {
   );
 }
 
-export function placeTags(): void {
+export function placeUsedTags(): void {
   const usedTagsSection: HTMLElement = getHTMLElement(".used-tags");
   const usedTags: string[] = getUsedTags();
 

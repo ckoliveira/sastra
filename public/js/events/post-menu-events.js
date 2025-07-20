@@ -67,6 +67,7 @@ document.addEventListener("post-save-requested", (e) => {
       updatedAt: updatedAt,
     });
     dispatchEvent("post-menu-closing-requested", {});
+    dispatchEvent("used-tags-reloading-requested", {});
     dispatchEvent("post-card-list-reloading-requested", {
       detail: {
         postsFilter: "",
