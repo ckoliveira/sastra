@@ -85,7 +85,12 @@ document.addEventListener("post-save-requested", (e) => {
     });
 
     dispatchEvent("post-menu-closing-requested", {});
-    dispatchEvent("post-card-list-reloading-requested", {});
+    dispatchEvent("post-card-list-reloading-requested", {
+      detail: {
+        postsFilter: "",
+      },
+    });
+    
     dispatchEvent("post-clicked", {
       detail: {
         postID: id,
