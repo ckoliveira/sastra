@@ -20,7 +20,7 @@
 - [x] <span style="color: #454545">Fix bug keeping the "close post" button from work after a post is edited (works again after the page is reloaded) </span>
 - [x] <span style="color: #454545">Reload post list after a post is deleted</span>
 - [ ] Fix problem that keeps a post from being closed when post menu is closed after being launched from the side panel
-- [x] Create event to update used tags automatically when a new pos<span style="color: #454545"></span>
+- [x] <span style="color: #454545">Create event to update used tags automatically when a post is created/edited/deleted</span>
 - [x] <span style="color: #454545">Add blog mode (posts are displayed sequentially in a single page instead of being picked from a post card list and displayed individually) [BASE VERSION] </span>
 - [ ] Add scroll to top and bottom buttons to posts
 - [x] Add possibility to filter post by tags
