@@ -22,4 +22,9 @@ if (getCachedPostID()) {
 } else {
   placePostMenu();
 }
+window.addEventListener("pageshow", (event) => {
+  if (event.persisted) {
+    setTheme();
+  }
+});
 setTheme();

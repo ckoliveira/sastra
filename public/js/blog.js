@@ -7,7 +7,6 @@ const postsContainer = getHTMLElement("#posts-container");
 postsContainer.innerHTML = "";
 const blogUrlParams = new URLSearchParams(window.location.search);
 const filter = decodeURIComponent(blogUrlParams.get("tag") || "");
-console.log(filter);
 postsContainer.innerHTML = Object.values(posts)
   .filter((p) => p.tags.includes(filter))
   .sort((a, b) => b.createdAt - a.createdAt)

@@ -34,4 +34,9 @@ for (let i = 1; i <= COLORS_AMOUNT; i++) {
     setThemeColor(colorName, getDefaultColor(i));
   };
 }
+window.addEventListener("pageshow", (event) => {
+  if (event.persisted) {
+    setTheme();
+  }
+});
 setTheme();

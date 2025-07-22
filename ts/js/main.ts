@@ -33,4 +33,3 @@ window.addEventListener("pageshow", (event) => {
 });
 
 setTheme();
-
