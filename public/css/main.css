@@ -4,16 +4,24 @@
 @import url("/css/post-menu.css");
 @import url("/css/blog.css");
 @import url("/css/todo.css");
+@import url("/css/theme-configuration.css");
 
 @import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap");
 
 :root {
-  --color-1: rgb(15, 17, 23);
-  --color-2: rgb(215, 215, 255);
-  --color-3: rgb(204, 204, 204);
-  --color-4: rgb(115, 132, 184);
-  --color-5: orange;
-  --color-6: rgb(64, 64, 65);
+  --base-color-1: rgb(15, 17, 23);
+  --base-color-2: rgb(215, 215, 255);
+  --base-color-3: rgb(204, 204, 204);
+  --base-color-4: rgb(115, 132, 184);
+  --base-color-5: rgb(255, 153, 0);
+  --base-color-6: rgb(64, 64, 65);
+
+  --color-1: var(--base-color-1);
+  --color-2: var(--base-color-2);
+  --color-3: var(--base-color-3);
+  --color-4: var(--base-color-4);
+  --color-5: var(--base-color-5);
+  --color-6: var(--base-color-6);
 }
 
 * {

@@ -12,6 +12,7 @@ import {
   loadCachedPost,
   setPostCache,
 } from "./cached-post.js";
+import { setTheme } from "./theme-configuration/theme-configuration.js";
 setStorage();
 setPostCache();
 loadPosts();
@@ -21,3 +22,4 @@ if (getCachedPostID()) {
 } else {
   placePostMenu();
 }
+setTheme();

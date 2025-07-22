@@ -13,6 +13,7 @@ import {
   loadCachedPost,
   setPostCache,
 } from "./cached-post.ts";
+import { setTheme } from "./theme-configuration/theme-configuration.ts";
 
 setStorage();
 setPostCache();
@@ -24,3 +25,12 @@ if (getCachedPostID()) {
 } else {
   placePostMenu();
 }
+
+window.addEventListener("pageshow", (event) => {
+  if (event.persisted) {
+    setTheme();
+  }
+});
+
+setTheme();
+

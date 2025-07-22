@@ -1,0 +1,40 @@
+.tc-main {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10em;
+}
+
+.color-picker {
+  width: 500px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.color-picker input {
+  border: none;
+  width: 70%;
+}
+
+.color-picker label {
+  font-weight: bold;
+}
+
+.tc-main > * {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1em;
+}
+
+.tc-theme {
+  border: 2px solid var(--color-2);
+  border-radius: 10px;
+  padding: 2em;
+}
