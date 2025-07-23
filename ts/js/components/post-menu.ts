@@ -1,3 +1,5 @@
+import { ImageButton } from "./image-button.ts";
+
 export const POST_MENU_DIV: string = "post-menu";
 export const POST_MENU_SAVE_BUTTON: string = "post-menu-save-button";
 export const POST_MENU_CLOSE_BUTTON: string = "post-menu-close-button";
@@ -10,12 +12,13 @@ export const PostMenu = (
   title: string = "",
   body: string = "",
   tags: string[] = [""],
-): string => `
-    <section id=${POST_MENU_DIV}>
+): string =>
+  /*html*/
+  `<section id=${POST_MENU_DIV}>
         <header class="post-menu-actions">
-            <button id=${POST_MENU_SAVE_BUTTON}>Save Entry</button>
+            ${ImageButton("icons/save-icon.png", POST_MENU_SAVE_BUTTON, "Save Post")}
             <h3 id="invalid-post-warning"> Post with empty body and title can't be made </h3>
-            <button id=${POST_MENU_CLOSE_BUTTON}> Close Menu </button>
+            ${ImageButton("icons/close-icon.png", POST_MENU_CLOSE_BUTTON, "Close Post Menu")}
         </header>
         
         <input type="text" placeholder="Title" id=${POST_TITLE_INPUT} value="${title}"/>

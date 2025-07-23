@@ -1,18 +1,23 @@
-import { Post } from "../types";
+import { Post } from "../types.ts";
+import { ImageButton } from "./image-button.ts";
 
 export const CLOSE_POST_BUTTON: string = "close-post-button";
 export const EDIT_POST_BUTTON: string = "edit-post-button";
 export const DELETE_POST_BUTTON: string = "delete-post-button";
+export const SEE_POST_BUTTON: string = "see-post-button";
 
 export function PostHTML(post: Post): string {
-  const body: string = ` <article class="post" id=${post.id}>
+  const body: string =
+    /*html*/
+    ` <article class="post" id=${post.id}>
       <header>
         <section class="post-actions">
           <div>
-            <button id=${EDIT_POST_BUTTON}> edit </button>
-            <button id=${DELETE_POST_BUTTON}> delete </button>
+            ${ImageButton("icons/eye-icon.png", SEE_POST_BUTTON, "See Post")}
+            ${ImageButton("icons/pencil-icon.png", EDIT_POST_BUTTON, "Edit Post")}
+            ${ImageButton("icons/trash-icon.png", DELETE_POST_BUTTON, "Delete Post")}
           </div>
-          <button id=${CLOSE_POST_BUTTON}> close </button>
+          ${ImageButton("icons/close-icon.png", CLOSE_POST_BUTTON, "Close Post")}
         </section>
         <h1 class="post-title"> ${post.title}</h1>
       </header>

@@ -26,3 +26,4 @@
 - [x] Fix empty string being stored as tag when user creates post without input any tags
 - [x] Fix spacing between post menu input fields
 - [x] Add theme configuration
+- [x] Add icons to menu options
