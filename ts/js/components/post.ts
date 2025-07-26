@@ -27,7 +27,7 @@ export function PostHTML(post: Post): string {
       <p class="post-tags">
       ${post.tags
         .map((tag) => tag.trim())
-        .map((tag) => `<a href="get-post=${tag}">::${tag}</a>`)
+        .map((tag) => `<a href="blog?tag=${tag}">::${tag}</a>`)
         .join(", ")}
       </p>
 

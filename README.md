@@ -29,4 +29,4 @@
 - [x] Add icons to menu options
 - [x] Add header menu
 - [ ] Add archives
-- [ ] Fix tags not redirecting to blog
+- [x] Fix tags not redirecting to blog

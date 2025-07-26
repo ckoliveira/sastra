@@ -20,7 +20,7 @@ export const BlogPost = (post) => /*HTML*/ `
                         ${post.tags
                           .map((tag) => tag.trim())
                           .map(
-                            (tag) => `<a href="get-post=${tag}">::${tag}</a>`,
+                            (tag) => `<a href="blog?tag=${tag}">::${tag}</a>`,
                           )
                           .join(", ")}
                     </div>
