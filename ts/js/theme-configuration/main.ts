@@ -1,4 +1,5 @@
 import { ColorInput } from "../components/color-input.ts";
+import { placeSastraHeader } from "../components/sastra-header.ts";
 import { getHTMLElement } from "../html.ts";
 import {
   COLORS_AMOUNT,
@@ -50,5 +51,7 @@ window.addEventListener("pageshow", (event) => {
     setTheme();
   }
 });
+
+placeSastraHeader();
 
 setTheme();

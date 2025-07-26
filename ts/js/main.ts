@@ -14,11 +14,13 @@ import {
   setPostCache,
 } from "./cached-post.ts";
 import { setTheme } from "./theme-configuration/theme-configuration.ts";
+import { placeSastraHeader } from "./components/sastra-header.ts";
 
 setStorage();
 setPostCache();
 loadPosts();
 placeUsedTags();
+placeSastraHeader();
 
 if (getCachedPostID()) {
   loadCachedPost();

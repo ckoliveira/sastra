@@ -1,4 +1,5 @@
 import { BlogPost } from "./components/blog-post.ts";
+import { placeSastraHeader } from "./components/sastra-header.ts";
 import { getHTMLElement } from "./html.ts";
 import { getPosts } from "./storage.ts";
 import { setTheme } from "./theme-configuration/theme-configuration.ts";
@@ -17,7 +18,9 @@ const blogUrlParams: URLSearchParams = new URLSearchParams(
 const filter: string = decodeURIComponent(blogUrlParams.get("tag") || "");
 
 postsContainer.innerHTML = Object.values(posts)
-  .filter((p) => p.tags.includes(filter))
+  .filter((p) => {
+    return window.location.search ? p.tags.includes(filter) : true;
+  })
   .sort((a, b) => b.createdAt - a.createdAt)
   .map((p) => BlogPost(p))
   .join(" ");
@@ -28,4 +31,5 @@ window.addEventListener("pageshow", (event) => {
   }
 });
 
+placeSastraHeader();
 setTheme();

@@ -1,4 +1,5 @@
 import { ColorInput } from "../components/color-input.js";
+import { placeSastraHeader } from "../components/sastra-header.js";
 import { getHTMLElement } from "../html.js";
 import {
   COLORS_AMOUNT,
@@ -39,4 +40,5 @@ window.addEventListener("pageshow", (event) => {
     setTheme();
   }
 });
+placeSastraHeader();
 setTheme();

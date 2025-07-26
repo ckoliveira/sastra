@@ -13,10 +13,12 @@ import {
   setPostCache,
 } from "./cached-post.js";
 import { setTheme } from "./theme-configuration/theme-configuration.js";
+import { placeSastraHeader } from "./components/sastra-header.js";
 setStorage();
 setPostCache();
 loadPosts();
 placeUsedTags();
+placeSastraHeader();
 if (getCachedPostID()) {
   loadCachedPost();
 } else {

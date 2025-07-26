@@ -27,3 +27,6 @@
 - [x] Fix spacing between post menu input fields
 - [x] Add theme configuration
 - [x] Add icons to menu options
+- [x] Add header menu
+- [ ] Add archives
+- [ ] Fix tags not redirecting to blog
