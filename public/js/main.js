@@ -14,7 +14,9 @@ import {
 } from "./cached-post.js";
 import { setTheme } from "./theme-configuration/theme-configuration.js";
 import { placeSastraHeader } from "./components/sastra-header.js";
+import { initializeHistoryStorage } from "./history/history.js";
 setStorage();
+initializeHistoryStorage();
 setPostCache();
 loadPosts();
 placeUsedTags();

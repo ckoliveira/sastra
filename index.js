@@ -29,6 +29,10 @@ app.get("/blog", (req, res) => {
   res.sendFile(path.join(`${process.cwd()}`, "public", "/html/blog.html"));
 });
 
+app.get("/history", (req, res) => {
+  res.sendFile(path.join(`${process.cwd()}`, "public", "/html/history.html"));
+});
+
 const url = chalk.bold.underline(`http://localhost:${port}`);
 
 app.listen(port, () => {

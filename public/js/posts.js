@@ -5,6 +5,7 @@ import {
   DELETE_POST_BUTTON,
   EDIT_POST_BUTTON,
   PostHTML,
+  SEE_POST_BUTTON,
 } from "./components/post.js";
 import { dispatchEvent } from "./events/events.js";
 import { getHTMLElement } from "./html.js";
@@ -78,5 +79,12 @@ export function setDeletePostButtonEvent() {
         postID: postID,
       },
     });
+  };
+}
+export function setSeePostButtonEvent() {
+  const seePostButton = getHTMLElement("#" + SEE_POST_BUTTON);
+  const postID = getCachedPostID();
+  seePostButton.onclick = function () {
+    location.href = `history?post=${postID}`;
   };
 }

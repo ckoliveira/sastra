@@ -9,6 +9,7 @@
 - [x] <span style="color: #454545">Add post delete option </span>
 - [x] <span style="color: #454545">Add option to remove post from middle panel </span>
 - [ ] Add Editing history to posts
+- [ ] Fix the way a post version is stored so that the first two versions arent stored as the same post
 - ~~Filter post list while typing in search bar~~ [DROPPED]
 - [x] Add search post button and search bar
 - [x] <span style="color: #454545">Pick a better font and a better letter logo </span>

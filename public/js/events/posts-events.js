@@ -1,10 +1,12 @@
 import { clearCachedPost } from "../cached-post.js";
+import { removePostHistory } from "../history/history.js";
 import { removeHTMLElement } from "../html.js";
 import {
   loadPosts,
   setClosePostButtonEvent,
   setDeletePostButtonEvent,
   setEditPostButtonEvent,
+  setSeePostButtonEvent,
   showPost,
 } from "../posts.js";
 import { deletePost } from "../storage.js";
@@ -15,6 +17,7 @@ document.addEventListener("post-clicked", (e) => {
   setClosePostButtonEvent();
   setEditPostButtonEvent();
   setDeletePostButtonEvent();
+  setSeePostButtonEvent();
   dispatchEvent("post-menu-closing-requested", {});
 });
 document.addEventListener("post-card-list-reloading-requested", (e) => {
@@ -35,6 +38,7 @@ document.addEventListener("post-closing-requested", (e) => {
 document.addEventListener("post-deletion-required", (e) => {
   const postID = e.detail.postID;
   deletePost(postID);
+  removePostHistory(postID);
   removeHTMLElement("#" + postID);
   clearCachedPost();
   dispatchEvent("post-card-list-reloading-requested", {

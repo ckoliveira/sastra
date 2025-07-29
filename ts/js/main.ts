@@ -15,8 +15,10 @@ import {
 } from "./cached-post.ts";
 import { setTheme } from "./theme-configuration/theme-configuration.ts";
 import { placeSastraHeader } from "./components/sastra-header.ts";
+import { initializeHistoryStorage } from "./history/history.ts";
 
 setStorage();
+initializeHistoryStorage();
 setPostCache();
 loadPosts();
 placeUsedTags();

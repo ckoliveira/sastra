@@ -1,5 +1,7 @@
 import { getCachedPostID } from "../cached-post.ts";
 import { POST_MENU_DIV, PostMenu } from "../components/post-menu.ts";
+import { generatePostHistory } from "../history/history.ts";
+import { addNewVersion } from "../history/version-manager.ts";
 import {
   doesElementExist,
   getHTMLElement,
@@ -61,12 +63,17 @@ document.addEventListener("post-save-requested", (e) => {
     let id: string;
     let createdAt: number;
     let updatedAt: number;
+    let oldVersion: Post | null = null;
+
+    /* If postInput has an id then we update the post and set a new value for updatedAt
+       If it doesnt have an id then we create a new post
+    */
 
     if (postInput.id) {
-      const post: Post = getPost(postInput.id);
+      oldVersion = getPost(postInput.id);
 
-      id = post.id;
-      createdAt = post.createdAt;
+      id = oldVersion.id;
+      createdAt = oldVersion.createdAt;
       updatedAt = Date.now();
     } else {
       id = crypto.randomUUID();
@@ -88,11 +95,20 @@ document.addEventListener("post-save-requested", (e) => {
       updatedAt: updatedAt,
     });
 
+    /* Generate history for post */
+    oldVersion ? addNewVersion(oldVersion, id) : generatePostHistory(id);
+
     dispatchEvent("post-menu-closing-requested", {});
     dispatchEvent("used-tags-reloading-requested", {});
     dispatchEvent("post-card-list-reloading-requested", {
       detail: {
         postsFilter: "",
+      },
+    });
+
+    dispatchEvent("new-post-created", {
+      detail: {
+        postID: id,
       },
     });
 

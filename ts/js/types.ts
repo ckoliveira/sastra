@@ -11,8 +11,22 @@ export type Post = {
 export type PostCollection = Record<string, Post>;
 
 export type PostCreationInput = {
-  id: string;
+  readonly id: string;
   title: string;
   body: string;
   tags: string[];
 };
+
+export type PostVersion = {
+  readonly post: Post;
+  readonly version: number;
+  readonly createdAt: number;
+};
+
+export type PostHistory = {
+  readonly postId: string;
+  currentVersion: number;
+  versions: PostVersion[];
+};
+
+export type History = Record<string, PostHistory>;

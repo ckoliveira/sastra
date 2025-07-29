@@ -15,6 +15,5 @@ const SastraHeader = () => /* HTML */ `
   </header>
 `;
 export function placeSastraHeader() {
-  console.log("aquiuuu");
   document.body.insertAdjacentHTML("beforebegin", SastraHeader());
 }

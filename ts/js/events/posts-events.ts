@@ -1,10 +1,12 @@
 import { clearCachedPost } from "../cached-post.ts";
+import { removePostHistory } from "../history/history.ts";
 import { removeHTMLElement } from "../html.ts";
 import {
   loadPosts,
   setClosePostButtonEvent,
   setDeletePostButtonEvent,
   setEditPostButtonEvent,
+  setSeePostButtonEvent,
   showPost,
 } from "../posts.ts";
 import { deletePost } from "../storage.ts";
@@ -18,6 +20,7 @@ document.addEventListener("post-clicked", (e) => {
   setClosePostButtonEvent();
   setEditPostButtonEvent();
   setDeletePostButtonEvent();
+  setSeePostButtonEvent();
 
   dispatchEvent("post-menu-closing-requested", {});
 });
@@ -46,6 +49,7 @@ document.addEventListener("post-deletion-required", (e) => {
   const postID: string = (e as CustomEvent).detail.postID;
 
   deletePost(postID);
+  removePostHistory(postID);
   removeHTMLElement("#" + postID);
   clearCachedPost();
 
