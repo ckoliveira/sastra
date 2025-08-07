@@ -1,5 +1,7 @@
 <h1 align="center">SASTRA</h1>
 
+A minimal site for writing, organizing and categorizing texts.
+
 ### Sastra TODO
 
 - ~~Fix middle panel logo to make it always be visible even when scrolling~~ <span style="color:red">[DROPPED] </span>
