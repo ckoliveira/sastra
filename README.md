@@ -1,6 +1,6 @@
 <h1 align="center">SASTRA</h1>
 
-A minimal site for writing, organizing and categorizing texts.
+A minimal site for creating, organizing and categorizing writings.
 
 ### Sastra TODO
 
